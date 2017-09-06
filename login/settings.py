@@ -25,7 +25,10 @@ SECRET_KEY = '^3i755m#nrt5hqhn&722t@@9%_4(*&u3=-vy(i76!03*dg*)ev'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'localhost',
+    'ec2-18-194-42-178.eu-central-1.compute.amazonaws.com'
+]
 
 
 # Application definition
@@ -123,4 +126,8 @@ STATIC_URL = '/static/'
 
 # Cookies
 if 'PROD' in os.environ:
-    SESSION_COOKIE_DOMAIN = ".typecraft.org"
+    try:
+        from .settings_prod import *
+    except ImportError:
+        pass
+

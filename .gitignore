@@ -101,3 +101,5 @@ ENV/
 .idea
 
 db.sqlite3
+
+settings_prod.py
