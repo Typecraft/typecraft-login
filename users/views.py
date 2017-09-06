@@ -22,7 +22,7 @@ def login_user(request):
         username = request.data.get('username')
         password = request.data.get('password')
 
-        user = authenticate(username, password)
+        user = authenticate(username=username, password=password)
         if user is not None:
             login(request, user)
             return Response()
