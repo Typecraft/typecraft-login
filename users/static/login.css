@@ -1,0 +1,41 @@
+.login__outer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login__inner{
+    background: #f0f0f0;
+    padding: 1em;
+    border-radius: 0.2em;
+}
+
+.form-group{
+    padding: 0.1em;
+}
+
+.form-group input{
+    width: 200px;
+    outline: none;
+    border: 1px solid gray;
+    padding: 0.5em 1em;
+    display: inline-block;
+}
+
+.form-group label{
+    display: inline-block;
+    width: 80px;
+}
+
+.form-control .submit{
+    display: block;
+    width: 100%;
+    background: #808080;
+    border: none;
+    padding: 0.5em;
+    color: #fff;
+    margin-top: 1em;
+    cursor: pointer;
+}

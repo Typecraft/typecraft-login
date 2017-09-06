@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+import json
+
 from django.contrib.auth.models import User
 from django.test import TestCase
 
@@ -24,7 +26,7 @@ class LoginTest(TestCase):
         self.assertIsNotNone(response.cookies.get('sessionid', ''))
         self.assertDictContainsSubset({
             'username': 'myusername',
-        }, response.data)
+        }, json.loads(response.content))
 
     def test_login_with_prod_should_set_domain_name(self):
         with self.settings(SESSION_COOKIE_DOMAIN=".typecraft.org"):
