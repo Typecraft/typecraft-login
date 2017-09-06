@@ -22,6 +22,9 @@ class LoginTest(TestCase):
         })
         self.assertEqual(response.status_code, 200)
         self.assertIsNotNone(response.cookies.get('sessionid', ''))
+        self.assertDictContainsSubset({
+            'username': 'myusername',
+        }, response.data)
 
     def test_login_with_prod_should_set_domain_name(self):
         with self.settings(SESSION_COOKIE_DOMAIN=".typecraft.org"):
