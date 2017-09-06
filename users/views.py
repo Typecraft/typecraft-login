@@ -7,6 +7,8 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.request import Request
 
+from api.serializers import UserSerializer
+
 
 @api_view(['GET', 'POST'])
 def login_user(request):
@@ -25,6 +27,7 @@ def login_user(request):
         user = authenticate(username=username, password=password)
         if user is not None:
             login(request, user)
-            return Response()
+            serializer = UserSerializer(user)
+            return Response(serializer.data)
         else:
             return Response(status=status.HTTP_401_UNAUTHORIZED)
