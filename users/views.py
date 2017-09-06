@@ -13,7 +13,7 @@ def login_user(request):
     """
     Logs in a user
     :param request:
-    :type requset: Request
+    :type request: Request
     :return:
     """
     if request.method == 'GET':
