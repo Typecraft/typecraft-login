@@ -1,0 +1,48 @@
+.signup__outer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:
+            radial-gradient(
+                rgba(77, 71, 48, 0.1),
+                rgba(77, 71, 48, 0.2)
+            ),
+            url('/static/login_bg.jpg');
+    background-size: cover;
+    background-position: 0 20%;
+    background-repeat: no-repeat;
+}
+
+.signup__inner{
+    padding: 2.5em 2em;
+    border-radius: 0.2em;
+    -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+}
+
+.form-group label{
+    display: inline-block;
+    width: 80px;
+}
+
+.form-control .submit{
+    display: block;
+    width: 100%;
+    background: #808080;
+    border: none;
+    padding: 0.5em;
+    color: #fff;
+    margin-top: 1em;
+    cursor: pointer;
+}
+
+.form-errors{
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    padding: 0.5em;
+}

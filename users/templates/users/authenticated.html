@@ -1,0 +1,27 @@
+{% extends 'users/base.html' %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'authenticated.css' %}">
+{% endblock %}
+{% block body %}
+    <div class="authenticated">
+        <h1 class="light">You are logged in</h1>
+        <h3 class="very-light">Where do you want to go?</h3>
+        <div class="authenticated__grid">
+            <a href="http://valex.typecraft.org" class="resetlink grid__card bg-valex-blue">
+                <div class="light valex-highlight-blue">
+                    <h2>Valex</h2>
+                    <h4 class="light">The Valence Lexcion</h4>
+                </div>
+            </a>
+            <a href="https://typecraft.org" class="resetlink grid__card bg-valex-orange">
+                <div class="light valex-highlight-orange">
+                    <h2>Typecraft</h2>
+                    <h4 class="light">The Multilingual Interlienar Glossed Text Bank</h4>
+                </div>
+            </a>
+        </div>
+        <a href="/logout/" class="mt-50 logout btn btn-large btn-default">Logout</a>
+    </div>
+{% endblock %}

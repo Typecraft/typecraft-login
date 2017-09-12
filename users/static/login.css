@@ -22,19 +22,3 @@
     -moz-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
 }
-
-.form-group label{
-    display: inline-block;
-    width: 80px;
-}
-
-.form-control .submit{
-    display: block;
-    width: 100%;
-    background: #808080;
-    border: none;
-    padding: 0.5em;
-    color: #fff;
-    margin-top: 1em;
-    cursor: pointer;
-}

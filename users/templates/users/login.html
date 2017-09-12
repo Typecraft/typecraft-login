@@ -3,7 +3,6 @@
 
 {% block head %}
     <link rel="stylesheet" href="{% static 'login.css' %}">
-    <link rel="stylesheet" href="{% static 'typecraft.css' %}">
 {% endblock %}
 {% block body %}
     <div class="login__outer">
@@ -18,7 +17,7 @@
                     <input name="username" type="text" id="username">
                 </div>
                 <div class="form-group">
-                    <label for="password"
+                    <label for="password">
                         Password
                     </label>
                     <div class="form-icon"><i class="mdi mdi-lock"></i></div>
@@ -28,10 +27,12 @@
                     <button class="submit block mt-10" type="submit">Submit</button>
                 </div>
             </form>
-            <div style="text-align: center" class="valex-highlight-blue">…</divs>
-            <button class="mt-15 btn btn-block bg-login-brown login-brown-highlight" style="width: 100%">
-                <a class="resetlink" href="/signup/">Create new account</a>
-            </button>
+            <div style="text-align: center" class="login-deep-blue-highlight">…</divs>
+            <a href="/signup/" class="resetlink">
+                <button class="mt-15 btn btn-block bg-login-brown login-brown-highlight" style="width: 100%">
+                    Create new account
+                </button>
+            </a>
         </div>
     </div>
 {% endblock %}
