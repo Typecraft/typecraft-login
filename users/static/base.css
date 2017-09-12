@@ -1,13 +1,10 @@
 html{
     height: 100%;
 }
+
 body{
     width: 100%;
     height: 100%;
-    background-image: url('/static/login_bg.jpg');
-    background-size: cover;
-    background-position: 0 20%;
-    background-repeat: no-repeat;
     overflow: hidden;
     margin: 0;
     padding: 0;

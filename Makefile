@@ -4,7 +4,7 @@ test:
 
 .PHONY: run
 run:
-	python manage.py runserver
+	python manage.py runserver 0.0.0.0:8011
 
 .PHONY: freeze
 freeze:
