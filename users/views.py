@@ -60,3 +60,24 @@ def logout_user(request):
 
     logout(request)
     return response
+
+
+@csrf_exempt
+def signup_user(request):
+    """
+    Logs out a user.
+
+    :param request:
+    :type request: Request
+    :return:
+    """
+    if request.method == 'GET':
+        return render(request, template_name='users/login.html')
+
+    if 'next' in request.GET or not request.is_ajax():
+        response = redirect(request.GET.get('next', '/'))
+    else:
+        response = redirect(reverse(login_user))
+
+    logout(request)
+    return response

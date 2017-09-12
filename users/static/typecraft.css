@@ -293,6 +293,43 @@ h1, h1, h2, h3, h4, h5, h6 {
 /* Coolors Exported Palette - coolors.co/48639c-4c4c9d-712f79-976391-f7996e */
 /* Valex */
 /* Login */
+button, .btn {
+  display: inline-block;
+  outline: none;
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  text-align: center; }
+  button:active, .btn:active {
+    -webkit-transform: scale(1.02, 1.02);
+            transform: scale(1.02, 1.02); }
+  button.btn-no-active:active, .btn.btn-no-active:active {
+    -webkit-transform: none !important;
+            transform: none !important; }
+  button.btn-default, .btn.btn-default {
+    background-color: #a0a0a0;
+    color: #e0e0e0; }
+  button.btn-small, .btn.btn-small {
+    min-width: 100px;
+    font-size: 12px; }
+  button.btn-medium, .btn.btn-medium {
+    min-width: 150px;
+    font-size: 16px; }
+  button.btn-large, .btn.btn-large {
+    min-width: 225px;
+    font-size: 18px; }
+  button.block, button.btn-block, .btn.block, .btn.btn-block {
+    display: block;
+    width: 100%; }
+
+/* Coolors Exported Palette - coolors.co/48639c-4c4c9d-712f79-976391-f7996e */
+/* Valex */
+/* Login */
 .badge {
   position: relative;
   font-size: .7em;
@@ -306,6 +343,11 @@ h1, h1, h2, h3, h4, h5, h6 {
 .badge.badge-default {
   color: white;
   background-color: gray; }
+
+.resetlink {
+  text-decoration: inherit !important;
+  color: inherit !important;
+  cursor: inherit !important; }
 
 .m-1 {
   margin: 1px; }
