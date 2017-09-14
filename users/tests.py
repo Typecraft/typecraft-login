@@ -3,11 +3,13 @@ from __future__ import unicode_literals
 
 import json
 
-from django.contrib.auth.models import User
 from django.test import TestCase
 
 
 # Create your tests here.
+from users.models import User
+
+
 class LoginTest(TestCase):
     @classmethod
     def setUpTestData(cls):
