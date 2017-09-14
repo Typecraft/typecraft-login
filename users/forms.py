@@ -1,18 +1,17 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm as OldUserCreationForm
-from django.contrib.auth.models import User
+
+from users.models import User
 
 
 class UserCreationForm(OldUserCreationForm):
-    email = forms.EmailField(required=True)
-
-    class Meta:
+    class Meta(OldUserCreationForm.Meta):
         model = User
-        fields = ("username", "email", "password1", "password2")
 
-    def save(self, commit=True):
-        user = super(UserCreationForm, self).save(commit=False)
-        user.email = self.cleaned_data["email"]
-        if commit:
-            user.save()
-        return user
+    def clean_username(self):
+        username = self.cleaned_data['username']
+        try:
+            User.objects.get(username=username)
+        except User.DoesNotExist:
+            return username
+        raise forms.ValidationError(self.error_messages['duplicate_username'])
