@@ -7,6 +7,7 @@ from users.models import User
 class UserCreationForm(OldUserCreationForm):
     class Meta(OldUserCreationForm.Meta):
         model = User
+        fields = ('username', 'email',)
 
     def clean_username(self):
         username = self.cleaned_data['username']
