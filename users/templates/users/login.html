@@ -8,7 +8,7 @@
     <div class="login__outer">
         <div class="login__inner bg-login-deep-blue">
             <h2 class="light mb-20 login-deep-blue-highlight">Sign in</h2>
-            <form action="/login" class="login-form-control form-colors-inverse" method="POST">
+            <form action="/login{% if next %}?next={{ next }}{% endif %}" class="login-form-control form-colors-inverse" method="POST">
                 <div class="form-group">
                     <label for="username">
                         Username

@@ -40,6 +40,9 @@ def _handle_default_content_negotiation(request, user):
 
 
 def index(request):
+    if 'next' in request.GET:
+        return redirect(request.GET.get('next', '/'))
+
     if request.user.is_authenticated:
         return render(request, template_name='users/authenticated.html')
     else:
@@ -59,11 +62,10 @@ def login_user(request):
         return _handle_default_content_negotiation(request, request.user)
 
     if request.method == 'GET':
-        return render(request, template_name='users/login.html')
+        return render(request, template_name='users/login.html', context={'next': request.GET.get('next')})
     else:
         username = request.POST.get('username')
         password = request.POST.get('password')
-        next = request.GET.get('next')
 
         user = authenticate(username=username, password=password)
         if user is not None:
