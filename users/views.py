@@ -31,11 +31,11 @@ def _handle_default_content_negotiation(request, user):
         if accept == 'text/html':
             return redirect('/')
         elif accept == 'application/json':
-            serializer = UserSerializer(user)
+            serializer = UserSerializer(user, context={'request': request})
             return HttpResponse(json.dumps(serializer.data), content_type='application/json')
 
     # Return json by default
-    serializer = UserSerializer(user)
+    serializer = UserSerializer(user, context={'request': request})
     return HttpResponse(json.dumps(serializer.data), content_type='application/json')
 
 
@@ -62,7 +62,10 @@ def login_user(request):
         return _handle_default_content_negotiation(request, request.user)
 
     if request.method == 'GET':
-        return render(request, template_name='users/login.html', context={'next': request.GET.get('next')})
+        return render(
+            request,
+            template_name='users/login.html',
+            context={'next': request.GET.get('next')})
     else:
         username = request.POST.get('username')
         password = request.POST.get('password')
