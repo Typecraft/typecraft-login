@@ -8,7 +8,7 @@
     <div class="signup__outer">
         <div class="signup__inner bg-login-brown">
             <h2 class="light mb-20 login-brown-highlight">Create account</h2>
-            <form action="/signup/" class="login-form-control form-brown form-inline form-colors-inverse" method="POST">
+            <form action="/signup/{% if next %}?next={{ next }}{% endif %}" class="login-form-control form-brown form-inline form-colors-inverse" method="POST">
                     {% if form.errors %}
                         <div class="form-errors login-brown-highlight mb-25">
                         {% for field in form %}

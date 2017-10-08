@@ -109,7 +109,7 @@ def signup_user(request):
     """
     if request.method == 'GET':
         form = UserCreationForm()
-        return render(request, context={'form': form}, template_name='users/signup.html')
+        return render(request, context={'form': form, 'next': request.GET.get('next')}, template_name='users/signup.html')
 
     form = UserCreationForm(request.POST)
     if form.is_valid():
@@ -118,4 +118,4 @@ def signup_user(request):
 
         return _handle_default_content_negotiation(request, user)
     else:
-        return render(request, context={'form': form}, template_name='users/signup.html')
+        return render(request, context={'form': form, 'next': request.GET.get('next')}, template_name='users/signup.html')
